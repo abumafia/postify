@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>📊 Statistika</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>📊 Sayt Statistikasi</h1>
+
+    <div id="today-stats"></div>
+  </div>
+
+    <div style="margin-bottom: 40px;">
+        <div id="top-users-display"></div>
+      <h2>👑 Eng faol foydalanuvchilar</h2>
+      <canvas id="userChart" height="200"></canvas>
+    </div>
+
+    <div style="margin-bottom: 40px;">
+        <div id="postModal" class="modal hidden">
+            <div class="modal-content">
+              <span class="close-btn" onclick="closePostModal()">&times;</span>
+              <div id="postDetails"></div>
+            </div>
+          </div>          
+        <div id="top-liked-display"></div>
+      <h2>🔥 Eng layk olgan postlar</h2>
+      <canvas id="likeChart" height="200"></canvas>
+    </div>
+
+    <div style="margin-bottom: 40px;">
+        <div id="postModal" class="modal hidden">
+            <div class="modal-content">
+              <span class="close-btn" onclick="closePostModal()">&times;</span>
+              <div id="postDetails"></div>
+            </div>
+          </div>          
+        <div id="top-commented-display"></div>
+      <h2>💬 Eng kommentli postlar</h2>
+      <canvas id="commentChart" height="200"></canvas>
+    </div>
+
+    <div style="margin-bottom: 40px;">
+        <h2>📅 Oxirgi 7 kunlik postlar</h2>
+        <canvas id="dailyChart" height="200"></canvas>
+      </div>
+      
+      <div style="margin-bottom: 40px;">
+        <h2>📆 Oxirgi 4 haftalik postlar</h2>
+        <canvas id="weeklyChart" height="200"></canvas>
+      </div>
+      
+      <div style="margin-bottom: 40px;">
+        <h2>🗓️ Oxirgi 6 oylik postlar</h2>
+        <canvas id="monthlyChart" height="200"></canvas>
+      </div>
+
+  <script src="stats.js"></script>
+</body>
+</html>

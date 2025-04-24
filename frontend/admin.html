@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Panel</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>🛡 Admin Panel</h1>
+
+    <!-- 🔍 Qidiruv -->
+    <input type="text" id="search" placeholder="Matndan qidirish..." />
+
+    <hr />
+    <h2>📊 Statistikalar</h2>
+
+    <div id="top-users"></div>
+    <div id="top-liked"></div>
+    <div id="top-commented"></div>
+
+    <hr />
+    <div id="admin-posts"></div>
+  </div>
+
+  <script>
+    const pass = prompt("Admin parol: ");
+    if (pass !== "admin123") window.location.href = "/";
+  </script>
+  <script src="admin.js"></script>
+</body>
+</html>

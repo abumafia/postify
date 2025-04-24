@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PostJoy</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+        <!-- 🔝 NAVBAR BOSHI -->
+<div class="top-navbar">
+    <h1 class="site-name">📝 PostJoy</h1>
+    <input type="text" id="search" class="search-input" placeholder="Qidiruv..." />
+    <div class="top-actions">
+      <a href="notifications.html" id="notifBtn" class="nav-icon">🔔</a>
+      <button onclick="openProfileModal()" class="nav-icon">👤</button>
+    
+    <div id="profileModal" class="modal" style="display: none;">
+      <div class="modal-content">
+        <h2>Profil sozlamalari</h2>
+        <input type="text" id="profileName" placeholder="Ism" />
+        <textarea id="profileBio" placeholder="Bio"></textarea>
+        <input type="file" id="profileImage" accept="image/*" />
+        <button onclick="saveProfile()">Saqlash</button>
+        <button onclick="closeProfileModal()">Bekor qilish</button>
+      </div>
+    </div>
+    </div>
+    </div>
+  </div>
+  <!-- 🔝 NAVBAR TUGADI -->
+
+  <div class="container">
+
+<!-- Postlar ro'yxati uchun joy -->
+<div id="posts"></div>
+
+<div class="bottom-nav">
+    <a href="reels.html" class="nav-btn">🎬 Reels</a>
+    <a href="audios.html" class="nav-btn">🎵 Audio</a>
+    <button onclick="openPostModal()" class="nav-btn">➕ Joylash</button>
+    <a href="texts.html" class="nav-btn">📄 Matnlar</a>
+    <a href="images.html" class="nav-btn">🖼️ Rasmlar</a>
+  </div>
+
+<div class="reels-link">
+    <a href="stats.html" style="margin-left: 10px;">📊 Statistika</a>
+</div>
+
+<!-- Post modal -->
+<div id="postModal" class="modal hidden">
+    <div class="modal-content">
+      <h2>➕ Yangi post</h2>
+      <form id="postForm">
+        <textarea id="text" placeholder="Post matni..." required></textarea>
+        <div class="custom-file">
+          <label for="media" class="file-label">📎 Fayl tanlang</label>
+          <span id="file-name">Hech qanday fayl tanlanmagan</span>
+          <input type="file" id="media" multiple accept="image/*,video/*,audio/*" style="display: none;" />
+        </div>
+        <button type="submit">Joylash</button>
+        <button type="button" onclick="closePostModal()">Bekor qilish</button>
+      </form>
+    </div>
+  </div>
+  
+  <script src="script.js"></script>
+</body>
+</html>

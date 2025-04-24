@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8" />
+  <title>🔔 Bildirishnomalar</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>🔔 Bildirishnomalar</h1>
+    <ul id="notif-list"></ul>
+  </div>
+
+  <script>
+    const currentUser = JSON.parse(localStorage.getItem("profile") || "{}")?.name;
+    const notifs = JSON.parse(localStorage.getItem("notifications") || "{}")[currentUser] || [];
+
+    const ul = document.getElementById("notif-list");
+
+    function convertUsernamesToLinks(message) {
+      // Faqat birinchi so‘zni (ism) profil linkiga aylantiramiz
+      const parts = message.split(" ");
+      const user = parts[0];
+      const rest = parts.slice(1).join(" ");
+      return `<a href="profile.html?user=${user}" class="profile-link">${user}</a> ${rest}`;
+    }
+
+    if (notifs.length === 0) {
+      ul.innerHTML = "<li>🚫 Hech qanday bildirishnoma yo‘q.</li>";
+    } else {
+      ul.innerHTML = notifs.map(msg => `<li>🔹 ${convertUsernamesToLinks(msg)}</li>`).join("");
+    }
+  </script>
+</body>
+</html>
