@@ -20,7 +20,7 @@ form.addEventListener("submit", async (e) => {
       formData.append("media", files[i]);
     }
   
-    await fetch("http://localhost:3000/api/posts", {
+    await fetch("/api/posts", {
       method: "POST",
       body: formData,
     });
@@ -40,7 +40,7 @@ async function loadPosts(scrollBack = false) {
   const scrollPos = window.scrollY;
 
   postsDiv.innerHTML = "";
-  const res = await fetch("http://localhost:3000/api/posts");
+  const res = await fetch("/api/posts");
   const posts = await res.json();
   posts.forEach(post => {
     const div = document.createElement("div");
@@ -68,7 +68,7 @@ async function loadPosts(scrollBack = false) {
 }
 
 function renderMedia(file, type) {
-  const url = `http://localhost:3000/${file}`;
+  const url = `/${file}`;
   if (type.startsWith("image")) return `<img src="${url}" class="post-media" />`;
   if (type.startsWith("video")) return `<video src="${url}" class="post-media" controls></video>`;
   if (type.startsWith("audio")) return `<audio src="${url}" class="post-media" controls></audio>`;
@@ -184,7 +184,7 @@ function renderPosts(posts) {
 
 async function loadPosts(scrollBack = false) {
     const scrollPos = window.scrollY;
-    const res = await fetch("http://localhost:3000/api/posts");
+    const res = await fetch("/api/posts");
     allPosts = await res.json();
     renderPosts(allPosts);
     if (scrollBack) window.scrollTo({ top: scrollPos, behavior: "instant" });
